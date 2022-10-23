@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Array Methods</title>
+</head>
+
+<body>
+    <script>
+
+        // FOR EACH METHOD
+
+        // const numbers = [1, 2, 3, 4]
+        // const newNumbers = []
+
+        // numbers.forEach(number => newNumbers.push(number * 2))
+
+        // console.log(newNumbers)
+
+        // const forEachValue = numbers.forEach(number => newNumbers.push(number * 2))
+
+        // console.log(forEachValue) // undefined ???
+
+        // MAP METHOD --> same length array
+
+        // const multipliedNumbers = numbers.map(number => number * 2)
+
+
+        // IN-SITU / DESTRUCTIVE FUNCTIONS, None of this methods are destructive/in-place functions
+
+        // const animals = ['dog', 'cow', 'hyena']
+
+        // console.log(animals.pop())  // destructive, in-situ function
+        // console.log(animals)
+
+        // FILTER METHOD
+
+        // const oddNumbers = numbers.filter(number => number % 2)
+        // console.log(oddNumbers)
+
+        // const people = [
+        //     { name: 'Candice', age: 25 },
+        //     { name: 'Tammy', age: 30 },
+        //     { name: 'Allen', age: 20 },
+        //     { name: 'Nettie', age: 21 },
+        //     { name: 'Stuart', age: 17 },
+        //     { name: 'Bill', age: 19 }
+        // ];
+
+        // const legitDrinkers =
+
+        // console.log(legitDrinkers)
+
+        // REDUCE: acc, current
+
+        // const totalSum = numbers.reduce((acc, current) => acc + current)
+        // const totalSum = numbers.reduce((acc, current) => {
+        // console.log("SOY EL ACC =>", acc, "SOY EL CURRENT =>", current)
+        // return acc + current
+        // })
+        // console.log(totalSum)
+
+        // const people = [
+        //     { name: 'Candice', age: 25 },
+        //     { name: 'Tammy', age: 30 },
+        //     { name: 'Allen', age: 49 },
+        //     { name: 'Nettie', age: 21 },
+        //     { name: 'Stuart', age: 17 }
+        // ];
+
+        // const ageAverage = people.reduce(((acc, curr) => acc + curr.age), 0) / people.length
+        // console.log("LA EDAD MEDIA => ", ageAverage)
+
+        // AMAZON REVIEWS EXAMPLE
+
+        // const product = {
+        //     name: 'AmazonBasics Apple Certified Lightning to USB Cable',
+        //     price: 7.99,
+        //     manufacturer: 'Amazon',
+        //     reviews: [
+        //         { user: 'Pavel Nedved', comments: 'It was really useful, strongly recommended', rate: 4 },
+        //         { user: 'Alvaro Trezeguet', comments: 'It lasted 2 days', rate: 1 },
+        //         { user: 'David Recoba', comments: 'Awesome', rate: 5 },
+        //         { user: 'Jose Romero', comments: 'Good value for money', rate: 4 },
+        //         { user: 'Antonio Cano', comments: 'It broked really fast', rate: 2 }
+        //     ]
+        // };
+
+        // IN-SITU DESTRUCTIVE ARRAY METHODS --> REVERSE, SORT
+
+        // REVERSE METHOD
+
+        // const reversedSentence = ["good", "what's", "buddy", "hey"]
+        // const rightSentence = reversedSentence.reverse()
+        // console.log(rightSentence)
+
+        // SORT METHOD
+
+        // const unorderedLetters = ['z', 'f', 'c', 'a']
+        // console.log(unorderedLetters.sort())
+
+        // const ages = [20, 88, 44, 7, 8, 16]
+        // // console.log(ages.sort()) // ???
+
+        // // console.log(ages.sort((a, b) => a - b)) // ???
+
+        // console.log(ages)
+        // ages.sort((b, a) => {
+        //     console.log(`FIRST: ${a}`, `SECOND: ${b}`)
+        //     console.log(b - a)
+        //     return b - a
+        // })
+
+        // 7, 8, 20, 44, 88
+
+        // const words = ['hippopotamusamphibius', 'hippopotamusamphibiuz', 'apple']
+
+        // words.sort((b, a) => {
+        //     console.log(b, a)
+        //     return b.length - a.length // > 0, sort b after a
+        //     // return a.length - b.length // < 0, sort b before a
+        // })
+
+        // console.log(words)
+
+        // SHALLOW COPIES vs DEEP COPIES
+
+        // const numbers = [1, 2, 3, [4, 5]]
+        // const _numbers = [...numbers]
+        // const _numbers = JSON.parse(JSON.stringify(numbers))
+        // numbers[3][0] = 0
+        // console.log("EL ORIGINAL =>", numbers)
+        // console.log("LA COPIA =>", _numbers)
+
+        // DEBUGGING
+
+        // let favoriteMovie = 'Memento'
+
+
+        // try {
+        //     favoriteMovie.reverse()
+        //     console.log(favoriteMovie)
+        // }
+        // catch (err) {
+        //     throw err
+        // }
+
+        // function powerOfThree(num) {
+        //     return number ** 3;
+        // }
+
+        // try {
+        //     console.log("try - gets executed first.");
+        //     powerOfThree(9);
+        // }
+        // catch (error) {
+        //     console.log("catch - gets executed if there's an error.");
+        //     throw error
+        // }
+        // finally {
+        //     console.log('finally - gets executed at the end no matter what.');
+        // }
+
+        // ERROR TYPES --->
+
+        // TYPE ERROR
+        // const bestBook = 'The Catcher in the Rye'
+        // bestBook = 'Deja que te cambie, pilluelo'
+
+        // REFERENCE ERROR
+        // let bestBook = 'The Catcher in the Rye'
+        // bestBook = 'Deja que te cambie, pilluelo'
+        // console.log(bestBok)
+
+        // SYNTAX ERROR
+
+        // function addNumbers(a, b) {
+        //     return a + b
+
+        //     console.log(addNumbers(5, 6))
+
+        // OTHER EXAMPLES
+        // 1)
+        // console.log(name)
+        // const name = 'pepegga'
+        // 2)
+        // username = 'Manolito'
+        // console.log(username)
+
+        // CREATE NEW ERROR --->
+
+        // function getUserName(user) {
+        //     if (!user.name) {
+        //         throw new SyntaxError("Incomplete data: no name");
+        //     }
+        //     return user.name;
+        // }
+
+        // try {
+        //     getUserName({ lastName: 'Lopez' });
+        // }
+        // catch (error) {
+        //     console.error(error);
+        // }
+        // finally {
+        //     console.log('This will run anyways.');
+        // }
+
+
+
+
+    </script>
+</body>
+
+</html>
